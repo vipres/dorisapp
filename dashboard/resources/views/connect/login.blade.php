@@ -32,7 +32,7 @@
                     <i class="bi bi-envelope-open"></i>
                     {!! Form::email('email', null, ['class' => 'input']) !!}
                 </div>
-                <label for="password">{{ __('lg.connect.password') }}:</label>
+                <label for="password" class="mtop16">{{ __('lg.connect.password') }}:</label>
                 <div class="group">
                     <i class="bi bi-fingerprint"></i>
                     {!! Form::password('password', null, ['class' => 'input']) !!}

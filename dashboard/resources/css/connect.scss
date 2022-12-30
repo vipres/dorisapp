@@ -5,6 +5,10 @@ html {
     font-size: 14px;
     font-family: "Roboto", sans-serif;
 }
+* {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
 
 body {
     background-color: #f9f9f9;
@@ -22,6 +26,12 @@ body {
     box-shadow: 1px 7px 16px 1px rgba(0, 0, 0, 0.12);
     -webkit-box-shadow: 1px 7px 16px 1px rgba(0, 0, 0, 0.12);
     -moz-box-shadow: 1px 7px 16px 1px rgba(0, 0, 0, 0.12);
+}
+label {
+    display: block;
+}
+.mtop16 {
+    margin-top: 16px !important;
 }
 .box {
     background-color: white;
@@ -49,5 +59,50 @@ body {
             width: 50%;
             margin: 0px auto;
         }
+    }
+}
+
+.group {
+    position: relative;
+    width: 100%;
+    margin-top: 4px;
+    input {
+        border: 1px solid #cccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        padding: 16px;
+        padding-left: 48px;
+        &:focus {
+            outline: none;
+            border: 1px solid #00b2ee;
+        }
+    }
+    i {
+        color: #2c2c2c;
+        position: absolute;
+        font-size: 1.5em;
+        z-index: 1;
+        top: 13px;
+        left: 18px;
+    }
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    border: 0px;
+    background-color: #00b2ee;
+    border: 1px solid #00b2ee;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1.5em;
+    &:hover {
+        background-color: #fff;
+        color: #00b2ee;
+        border: 1px solid #00b2ee;
     }
 }
