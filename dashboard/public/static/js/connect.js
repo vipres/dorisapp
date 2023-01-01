@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function connect_user_login() {
+    loader_action_status("show");
     url = base + "/api-js/connect/login";
 
     console.log(url);

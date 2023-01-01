@@ -1,0 +1,23 @@
+.mdalert {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: none;
+  justify-content: center;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  .mdalert_inside {
+    background-color: white;
+    border-radius: 12px;
+    width: 86%;
+    .mdalert_content {
+      color: #333;
+      box-sizing: border-box;
+      padding: 24px;
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+}
