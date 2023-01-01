@@ -7,17 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ __('lg.connect.login') }} - Doris APP</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="routeName" content="{{ Route::currentRouteName() }}">
     <link rel="icon" href="{{ url('/favicon.ico') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    @vite(['resources/css/connect.scss'])
+    @vite(['resources/css/connect.scss' ])
+    <script src="{{ asset('static/js/dorisapp.js') }}"></script>
+    <script src="{{ asset('static/js/connect.js') }}"></script>
+
+
 </head>
 
 <body>
+    @include('components.loader_action')
     <div class="page">
-        <div class="box shadow">
+        <div class="box">
 
             <div class="logo">
                 <img src="{{ url('/static/images/logo.png') }}" alt="{{config('cms.app.name')}}">
@@ -26,7 +32,7 @@
                 {{ __('lg.connect.login') }}
             </h2>
             <div class="form mtop16">
-                {!! Form::open(['url' => '/', 'id' => 'form_connect']) !!}
+                {!! Form::open(['url' => '/', 'id' => 'form_connect_login']) !!}
                 <label for="email">{{ __('lg.connect.email') }}:</label>
                 <div class="group">
                     <i class="bi bi-envelope-open"></i>
