@@ -24,13 +24,32 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-4 col-md-2">
-            <a href="#" id="only_show" class="btn btn-primary w-100
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-4 col-md-2">
+                <a href="#" id="only_show" class="btn btn-primary w-100
             ">Mostrar</a>
+            </div>
+            <div class="col-4 col-md-2">
+                <a href="#" id="alert_with_actions" class="btn btn-primary w-100
+            ">Acciones</a>
+            </div>
+            <div class="col-4 col-md-2">
+                <a href="#" id="alert_confirm" class="btn btn-primary w-100
+            ">Eliminar</a>
+            </div>
+            <div class="col-4 col-md-2">
+                <a href="#" id="alert_callback" class="btn btn-primary w-100
+            ">Callback</a>
+            </div>
+            <div class="col-4 col-md-2">
+                <a href="#" id="alert_no_close" class="btn btn-primary w-100
+            ">No Close</a>
+            </div>
+
         </div>
     </div>
 </body>
-https://www.youtube.com/watch?v=KHVlDGhJNgs&t=47s MIN 45
+
 
 </html>
