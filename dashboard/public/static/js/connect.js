@@ -34,12 +34,6 @@ function connect_user_login() {
                 title: "Doris APP",
                 type: "error",
                 msg: "Ha ocurrido un error desconocido",
-                msgs: JSON.stringify([
-                    "mensaje #1",
-                    "mensaje #2",
-                    "mensaje #3",
-                    "mensaje #4",
-                ]),
             });
         }
         loader_action_status("hide");

@@ -8,7 +8,7 @@ return [
         'error_validation' => 'Fallo de validación'
     ],
     'connect' => [
-        'login' => 'Ingresar a mi cuenta',
+        'login' => 'Ingresar a mi cuenta mcabrera@devel.com',
         'email' => 'Correo Electrónico',
         'password' => 'Contraseña',
         'connect' => 'Ingresar',
