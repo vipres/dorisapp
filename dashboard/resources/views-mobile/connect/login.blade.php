@@ -20,33 +20,37 @@
 
 <body>
     @include('components.loader_action')
-    <div class="page page_app">
-        <div class="box">
+    @include('components.mdalert')
+    <div class="wrapper">
+        <div class="page page_app">
+            <div class="box">
 
-            <div class="logo">
-                <img src="{{ url('/static/images/logo-blanco.png') }}" alt="{{config('cms.app.name')}}">
-            </div>
-            <h2 class="title">
-                {{ __('lg.connect.login') }}
-            </h2>
-            <div class="form mtop16">
-                {!! Form::open(['url' => '/', 'id' => 'form_connect_login']) !!}
-                <label for="email">{{ __('lg.connect.email') }}:</label>
-                <div class="group">
-                    <i class="bi bi-envelope-open"></i>
-                    {!! Form::email('email', null, ['class' => 'input']) !!}
+                <div class="logo">
+                    <img src="{{ url('/static/images/logo-blanco.png') }}" alt="{{config('cms.app.name')}}">
                 </div>
-                <label for="password" class="mtop16">{{ __('lg.connect.password') }}:</label>
-                <div class="group">
-                    <i class="bi bi-fingerprint"></i>
-                    {!! Form::password('password', null, ['class' => 'input']) !!}
+                <h2 class="title">
+                    {{ __('lg.connect.login') }}
+                </h2>
+                <div class="form mtop16">
+                    {!! Form::open(['url' => '/', 'id' => 'form_connect_login']) !!}
+                    <label for="email">{{ __('lg.connect.email') }}:</label>
+                    <div class="group">
+                        <i class="bi bi-envelope-open"></i>
+                        {!! Form::email('email', null, ['class' => 'input']) !!}
+                    </div>
+                    <label for="password" class="mtop16">{{ __('lg.connect.password') }}:</label>
+                    <div class="group">
+                        <i class="bi bi-fingerprint"></i>
+                        {!! Form::password('password', null, ['class' => 'input']) !!}
+                    </div>
+                    {!! Form::submit( __('lg.connect.connect'), ['class' => 'btn transition mtop16'] ) !!}
+                    {!! Form::close() !!}
                 </div>
-                {!! Form::submit( __('lg.connect.connect'), ['class' => 'btn transition mtop16'] ) !!}
-                {!! Form::close() !!}
-            </div>
 
+            </div>
         </div>
     </div>
+    <script src="{{ asset('static/js/mdalert.js') }}"></script>
 </body>
 
 </html>

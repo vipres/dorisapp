@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiJS\ConnectController as ApiJSConnectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConnectController;
 /*
@@ -17,3 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('login', [ConnectController::class, 'getLogin'])->name('login');
+Route::prefix('/api-js')->group(function () {
+    //Connect Module
+
+    Route::post('connect/login', [ApiJSConnectController::class, 'postLogin']);
+});

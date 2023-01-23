@@ -13,5 +13,36 @@ function connect_user_login() {
     loader_action_status("show");
     url = base + "/api-js/connect/login";
 
-    console.log(url);
+    let http = new XMLHttpRequest();
+    http.open("POST", url, true);
+    http.setRequestHeader("X-CSRF-TOKEN", csrfToken);
+
+    http.onreadystatechange = function () {
+        if (this.readyState == "4" && this.status == "200") {
+            let data = this.responseText;
+            data = JSON.parse(data);
+            if (data.type == "error") {
+                md_alert(data);
+            }
+            if (data.type == "success") {
+                window.location.href = base;
+            }
+        }
+
+        if (this.status != 200) {
+            md_alert({
+                title: "Doris APP",
+                type: "error",
+                msg: "Ha ocurrido un error desconocido",
+                msgs: JSON.stringify([
+                    "mensaje #1",
+                    "mensaje #2",
+                    "mensaje #3",
+                    "mensaje #4",
+                ]),
+            });
+        }
+        loader_action_status("hide");
+    };
+    http.send(new FormData(document.getElementById("form_connect_login")));
 }

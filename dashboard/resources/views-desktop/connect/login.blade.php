@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     @vite(['resources/css/connect.scss' ])
+    <script src="{{ asset('static/js/lang/'.config('doris.languaje')) }}.js"></script>
     <script src="{{ asset('static/js/dorisapp.js') }}"></script>
     <script src="{{ asset('static/js/connect.js') }}"></script>
 
@@ -22,33 +23,42 @@
 
 <body>
     @include('components.loader_action')
-    <div class="page">
-        <div class="box">
+    @include('components.mdalert')
+    <div class="wrapper">
+        <div class="page">
+            <div class="box">
 
-            <div class="logo">
-                <img src="{{ url('/static/images/logo.png') }}" alt="{{config('cms.app.name')}}">
-            </div>
-            <h2 class="title">
-                {{ __('lg.connect.login') }}
-            </h2>
-            <div class="form mtop16">
-                {!! Form::open(['url' => '/', 'id' => 'form_connect_login']) !!}
-                <label for="email">{{ __('lg.connect.email') }}:</label>
-                <div class="group">
-                    <i class="bi bi-envelope-open"></i>
-                    {!! Form::email('email', null, ['class' => 'input']) !!}
+                <div class="logo">
+                    <img src="{{ url('/static/images/logo.png') }}" alt="{{config('cms.app.name')}}">
                 </div>
-                <label for="password" class="mtop16">{{ __('lg.connect.password') }}:</label>
-                <div class="group">
-                    <i class="bi bi-fingerprint"></i>
-                    {!! Form::password('password', null, ['class' => 'input']) !!}
-                </div>
-                {!! Form::submit( __('lg.connect.connect'), ['class' => 'btn mtop16'] ) !!}
-                {!! Form::close() !!}
-            </div>
+                <h2 class="title">
+                    {{ __('lg.connect.login') }}
+                </h2>
+                <div class="form mtop16">
+                    {!! Form::open(['url' => '/', 'id' => 'form_connect_login']) !!}
+                    <label for="email">{{ __('lg.connect.email') }}:</label>
+                    <div class="group">
+                        <i class="bi bi-envelope-open"></i>
+                        {!! Form::email('email', null, ['class' => 'input']) !!}
+                    </div>
+                    <label for="password" class="mtop16">{{ __('lg.connect.password') }}:</label>
+                    <div class="group">
+                        <i class="bi bi-fingerprint"></i>
 
+                        <input type="password" name="password" class="input" id="input_password">
+                    </div>
+                    <div class="action">
+                        <a href="#" class="show_password" data-state="hide" data-target="input_password">{{
+                            __('lg.connect.show_password') }}</a>
+                    </div>
+                    {!! Form::submit( __('lg.connect.connect'), ['class' => 'btn mtop16'] ) !!}
+                    {!! Form::close() !!}
+                </div>
+
+            </div>
         </div>
     </div>
+    <script src="{{ asset('static/js/mdalert.js') }}"></script>
 </body>
 
 </html>
