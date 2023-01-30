@@ -7,6 +7,13 @@ html {
     font-size: 14px;
     font-family: "Roboto", sans-serif;
 }
+hr {
+    border: 0px;
+    height: 1px;
+    background-color: #f0f0f0;
+    padding: 0px;
+    margin: 0px;
+}
 .transition {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -69,6 +76,13 @@ label {
         }
     }
     .form {
+        p {
+            font-size: 1.1em;
+            line-height: 1.14em;
+            font-weight: 300;
+            color: #444;
+        }
+
         .action {
             overflow: hidden;
             display: block;
@@ -130,6 +144,16 @@ label {
         background-color: #f7cd4c;
         color: #222;
         border: 1px solid #f7cd4c;
+    }
+}
+.btn-green {
+    background-color: #26c485;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    border: 0;
+    &:hover {
+        border: 0px;
     }
 }
 

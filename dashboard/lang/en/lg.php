@@ -18,10 +18,10 @@ return [
         'v_password_min' => 'La contraseña debe tener al menos 8 caracteres',
         'connect_fail' => 'Correo electrónico o contraseña errónea',
         'show_password' => 'Mostrar contraseña',
-        '' => '',
-        '' => '',
-        '' => '',
-        '' => '',
+        'twofactor' => 'Doble Factor de Autenticación',
+        'code' => 'Ingresa tu código de seguridad',
+        'code_text_1' => 'Hemos enviado tu código de seguridad a tu correo electrónico, si no te llega mira en tu bandeja de SPAM ¿Aún no te ha llegado?',
+        'code_text_2' => 'Solicita uno nuevo',
         '' => '',
 
     ]
