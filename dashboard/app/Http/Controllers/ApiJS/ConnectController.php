@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ApiJS;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
@@ -74,7 +75,10 @@ class ConnectController extends Controller
                 $data = ['type' => 'error', 'title' => __('lg.general.error'), 'msg' => __('lg.connect.v_code_wrong'),];
                 return response()->json($data);
             else :
-                $data = ['type' => 'success'];;
+                $data = ['type' => 'success'];
+                $user = User::find(Auth::id());
+                $user->auth_code = null;
+                $user->save();
                 return response()->json($data)->cookie('doris_device_trusted', '1', env('SESSION_LIFETIME'));
             endif;
 

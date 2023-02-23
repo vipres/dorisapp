@@ -13,7 +13,6 @@ class TwoFactorController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('two.factor');
     }
 
     public function getCode()
@@ -29,7 +28,6 @@ class TwoFactorController extends Controller
         $user = User::find(Auth::id());
         $user->auth_code = $code;
         $user->save();
-        //return view('emails.SendCodeTwoFactor', $data);
         Mail::to(Auth::user()->email)->send(new SendCodeTwoFactor($data));
     }
 }

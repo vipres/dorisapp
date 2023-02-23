@@ -35,5 +35,8 @@ return [
         'text_2' => 'Este código de seguridad es de un solo uso por lo que si requieres iniciar sesión tendrás que solicitar uno nuevo.',
         '' => '',
         '' => '',
+    ],
+    'sidebar' => [
+        'dashboard' => 'Dashboard',
     ]
 ];

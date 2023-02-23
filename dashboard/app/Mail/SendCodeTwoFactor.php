@@ -48,7 +48,7 @@ class SendCodeTwoFactor extends Mailable
     {
         return new Content(
             view: 'emails.SendCodeTwoFactor',
-            with: ['data' => $this->data],
+            with: $this->data,
         );
     }
 

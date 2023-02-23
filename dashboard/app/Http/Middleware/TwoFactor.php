@@ -16,14 +16,13 @@ class TwoFactor
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
+
     public function handle(Request $request, Closure $next)
     {
-        if ($request->hasCookie('doris_device_trusted') != false && Cookie::get('doris_device_trusted') == "") :
+        if (!$request->hasCookie('doris_device_trusted')) :
             return redirect('connect/two/factor');
         endif;
-        if (Cookie::get('doris_device_trusted') != "") :
-            return redirect('/');
-        endif;
+
         return $next($request);
     }
 }

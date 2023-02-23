@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApiJS\ConnectController as ApiJSConnectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConnectController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TwoFactorController;
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,7 @@ use App\Http\Controllers\TwoFactorController;
 |
 */
 
-Route::get('/', function () {
-});
+Route::get('/', [DashboardController::class, 'getHome']);
 
 //connect router
 Route::get('login', [ConnectController::class, 'getLogin'])->name('login');
