@@ -18,7 +18,7 @@ class TwoFactorController extends Controller
 
     public function getCode()
     {
-        //$this->getSendCodeTwoFactor();
+        $this->getSendCodeTwoFactor();
         return view('connect.twofactor');
     }
 
