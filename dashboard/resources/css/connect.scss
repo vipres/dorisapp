@@ -49,6 +49,10 @@ label {
 .mtop16 {
     margin-top: 16px !important;
 }
+
+.mtop24 {
+    margin-top: 24px !important;
+}
 .box {
     background-color: white;
     padding: 40px;
@@ -163,6 +167,7 @@ label {
         background-color: transparent !important;
         border-bottom: 0px !important;
         width: 100% !important;
+
         .logo {
             img {
                 width: 60% !important;
@@ -172,6 +177,30 @@ label {
             color: white;
         }
         .form {
+            .white-box {
+                background-color: white;
+                border-radius: 8px;
+                padding: 16px;
+                p {
+                    margin: 0px;
+                }
+                .btn {
+                    margin-top: 16px;
+                    font-weight: 500;
+                }
+                .btn-green {
+                    background-color: #26c485;
+                    color: #fff;
+                    box-sizing: border-box;
+                    text-align: center;
+                    text-decoration: none;
+                    border: 0;
+                    &:hover {
+                        border: 0px;
+                    }
+                }
+            }
+
             .action {
                 a {
                     color: #fff;

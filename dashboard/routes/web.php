@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 //connect router
 Route::get('login', [ConnectController::class, 'getLogin'])->name('login');
+Route::get('logout', [ConnectController::class, 'getLogout'])->name('logout');
 Route::get('connect/two/factor', [TwoFactorController::class, 'getCode'])->name('connect_two_factor');
 
 
@@ -27,4 +28,5 @@ Route::prefix('/api-js')->group(function () {
     //Connect Module
 
     Route::post('connect/login', [ApiJSConnectController::class, 'postLogin']);
+    Route::post('connect/twoauth', [ApiJSConnectController::class, 'postAuthCode']);
 });

@@ -10,11 +10,11 @@
 
 
 @section('content')
-<div class="page">
+<div class="page page_app">
     <div class="box">
 
         <div class="logo">
-            <img src="{{ url('/static/images/logo.png') }}" alt="{{config('cms.app.name')}}">
+            <img src="{{ url('/static/images/logo-blanco.png') }}" alt="{{config('cms.app.name')}}">
         </div>
         <h2 class="title">
             {{ __('lg.connect.twofactor') }}
@@ -32,10 +32,11 @@
 
             {!! Form::submit( __('lg.connect.connect'), ['class' => 'btn mtop16'] ) !!}
             {!! Form::close() !!}
-            <hr class="mtop16">
-            <p class="mtop16">{{ __('lg.connect.code_text_1') }} </p>
-            <a href="{{ url('/connect/two/factor') }}" class="btn btn-green transition">{{
-                __('lg.connect.code_text_2') }}</a>
+            <div class="white-box mtop24">
+                <p>{{ __('lg.connect.code_text_1') }} </p>
+                <a href="{{ url('/connect/two/factor') }}" class="btn btn-green transition">{{
+                    __('lg.connect.code_text_2') }}</a>
+            </div>
         </div>
 
     </div>
